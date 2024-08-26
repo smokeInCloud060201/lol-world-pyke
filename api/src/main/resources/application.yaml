@@ -1,0 +1,17 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: Pyke - Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: nautilus_route
+          uri: http://baeldung.com
+          predicates:
+            - Path=/baeldung/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8084/eureka/
